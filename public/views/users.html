@@ -1,0 +1,36 @@
+<section ng-controller="UsersCtrl" ng-init="init()">
+  <div>
+    <div>
+      <input type="text" ng-model="models.name">
+    </div>
+    <div>
+      <input type="text" ng-model="models.city">
+      <h1>{{models.city}}</h1>
+    </div>
+    <div>
+      <input type="text" ng-model="models.country">
+    </div>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Country</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="user in models.usersList">
+        <td ng-bind="user.name"></td>
+        <td ng-bind="user.address"></td>
+        <td ng-bind="user.city"></td>
+        <td ng-bind="user.country"></td>
+        <td><a href ng-click="editUser(user)">Edit</a></td>
+        <td><a href ng-click="deleteUser(user)">Delete</a></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
